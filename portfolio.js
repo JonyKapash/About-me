@@ -11,35 +11,43 @@ fetch(GITHUB_URL)
 
 let cities = [
 	"https://maps.google.com/maps?q=kfar%20saba&t=&z=15&ie=UTF8&iwloc=&output=embed",
-	"https://maps.google.com/maps?q=herz&t=&z=13&ie=UTF8&iwloc=&output=embed",
+	"https://maps.google.com/maps?q=Herzliya&t=&z=13&ie=UTF8&iwloc=&output=embed",
 	"https://maps.google.com/maps?q=kfar%20haruv&t=&z=13&ie=UTF8&iwloc=&output=embed",
-	"https://maps.google.com/maps?q=ramat&t=&z=13&ie=UTF8&iwloc=&output=embed",
-	"https://maps.google.com/maps?q=tel&t=&z=13&ie=UTF8&iwloc=&output=embed",
+	"https://maps.google.com/maps?q=ramat%20gan&t=&z=13&ie=UTF8&iwloc=&output=embed",
+	"https://maps.google.com/maps?q=tel%20aviv&t=&z=13&ie=UTF8&iwloc=&output=embed",
 ];
-var i = 0;
+let i = 0;
+document.getElementById("prev_button").disabled = true;
 
 function nextItem() {
-	i = i + 1; // increase i by one
-	i = i % cities.length; // if we've gone too high, start from `0` again
+	document.getElementById("prev_button").disabled = false;
+	i++; // increase i by one
+	if (i >= cities.length - 1) {
+		document.getElementById("next_button").disabled = true;
+	}
+
 	return cities[i]; // give us back the item of where we are now
 }
 
 function prevItem() {
-	if (i === 0) {
-		// i would become 0
-		i = cities.length; // so put it at the other end of the array
+	i--; // decrease by one
+	if (i < cities.length) {
+		document.getElementById("next_button").disabled = false;
 	}
-	i = i - 1; // decrease by one
+	if (i <= 0) {
+		document.getElementById("prev_button").disabled = true;
+	}
+
 	return cities[i]; // give us back the item of where we are now
 }
 
 window.addEventListener("load", function () {
-	document.getElementById("output").textContent = cities[0]; // initial value
 	document.getElementById("prev_button").addEventListener(
 		"click", // we want to listen for a click
 		function (e) {
 			// the e here is the event itself
-			document.getElementById("output").textContent = prevItem();
+
+			document.getElementById("gmap_canvas").setAttribute("src", prevItem());
 		}
 	);
 
@@ -47,7 +55,8 @@ window.addEventListener("load", function () {
 		"click", // we want to listen for a click
 		function (e) {
 			// the e here is the event itself
-			document.getElementById("output").textContent = nextItem();
+
+			document.getElementById("gmap_canvas").setAttribute("src", nextItem());
 		}
 	);
 });
