@@ -65,7 +65,9 @@ body {
 	width: 180px;
 }
 
-/* --------------------------- */
+/* ----------ITC---------- */
+
+/* nav bar  */
 
 nav ul {
 	list-style-type: none;
@@ -91,14 +93,92 @@ nav li a {
 	text-decoration: none;
 }
 
-/* Change the link color to #111 (black) on hover */
 nav li a:hover {
 	background-color: #111;
 }
 
-.top-section,
-.middle-section {
+/* about */
+
+.about-middle-section,
+.about-top-section {
 	margin-top: 4rem;
 	width: 55%;
 	padding-left: 1rem;
+}
+
+/* Contact */
+
+.contact-top-section {
+	width: 55%;
+	padding-left: 1rem;
+	text-align: center;
+	margin: 6rem auto 0 auto;
+}
+
+form {
+	max-width: 37.5em;
+	text-align: center;
+	margin: 1.25em auto;
+}
+
+input,
+textarea {
+	border: 0;
+	outline: 0;
+	padding: 1em;
+	border-radius: 10px;
+	display: block;
+	width: 100%;
+	margin-top: 1em;
+	resize: none;
+}
+
+#input-submit {
+	color: white;
+	background: red;
+	cursor: pointer;
+}
+#input-submit:hover {
+	background: rgb(230, 13, 13);
+}
+
+textarea {
+	height: 7.87rem;
+}
+
+.half {
+	float: left;
+	width: 48%;
+	margin-bottom: 1em;
+}
+
+.right {
+	width: 50%;
+}
+
+.left {
+	margin-right: 2%;
+}
+
+.form-chackbox {
+	display: inline-flex;
+}
+
+input[type="checkbox"] {
+	color: red;
+}
+
+/* For screen less then 480px */
+@media (max-width: 480px) {
+	#input-submit {
+		width: 95%;
+		float: none;
+		margin: 0.8em auto;
+	}
+
+	.half {
+		width: 95%;
+		float: none;
+		margin: 0 auto;
+	}
 }
