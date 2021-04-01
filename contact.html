@@ -24,7 +24,7 @@
 			</p>
 		</section>
 
-		<form>
+		<form class="contact-form" id="contact-form">
 			<div class="half left">
 				<input type="text" id="input-name" placeholder="First Name" required />
 				<input type="text" id="input-Lname" placeholder="Last Name" />
@@ -37,28 +37,50 @@
 			</div>
 			<div class="half right">
 				<textarea
-					name="message"
+					name="Comment"
 					type="text"
-					id="input-message"
+					id="input-Comment"
 					placeholder="Comment"
 					required
 				></textarea>
 			</div>
 			<div class="form-chackbox">
-				<p>Please Select your Preferred Coding Languages</p>
-				<input
-					type="checkbox"
-					name="Lang1"
-					value="JavaScript"
-				/>JavaScript<br />
-				<input type="checkbox" name="Lang2" value="Python" />Python<br />
-				<input type="checkbox" name="Lang3" value="Ruby" />Ruby<br />
-				<input type="checkbox" name="Lang4" value="C++" />C++<br />
-				<input type="checkbox" name="Lang5" value="C Sharp" />C Sharp<br /><br />
-			</div>
-			<input type="submit" value="Submit" id="input-submit" />
-		</form>
+				<h3>Please Select your Preferred Coding Languages</h3>
+				<label class="container"
+					>JavaScript
+					<input id="JavaScript-checkbox" type="checkbox" value="JavaScript" />
+					<span class="checkmark"></span>
+				</label>
 
+				<label class="container"
+					>Ruby
+					<input id="ruby-checkbox" type="checkbox" value="Ruby" />
+					<span class="checkmark"></span>
+				</label>
+
+				<label class="container"
+					>C#
+					<input id="c#-checkbox" type="checkbox" value="C#" />
+					<span class="checkmark"></span>
+				</label>
+
+				<label class="container"
+					>Python
+					<input id="python-checkbox" type="checkbox" value="Python" />
+					<span class="checkmark"></span>
+				</label>
+			</div>
+			<!-- <input type="button" value="Submit" id="input-submit" /> -->
+			<button
+				id="input-submit"
+				type="submit"
+				form="contact-form"
+				value="Submit"
+				onclick="formSubmit()"
+			>
+				Submit
+			</button>
+		</form>
 		<script src="portfolio.js"></script>
 	</body>
 </html>
