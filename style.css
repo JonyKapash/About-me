@@ -126,7 +126,7 @@ form {
 
 input,
 textarea,
-#input-submit {
+#button-submit {
 	border: 0;
 	outline: 0;
 	padding: 1em;
@@ -138,17 +138,21 @@ textarea,
 	font-size: 1rem;
 }
 
-#input-submit {
+#button-submit {
 	color: white;
 	background: red;
 	cursor: pointer;
 }
-#input-submit:hover {
+#button-submit:hover {
 	background: rgb(230, 13, 13);
 }
 
-textarea {
-	height: 7.87rem;
+#button-submit:disabled {
+	background-color: rgb(184, 155, 155);
+}
+
+#input-Comment {
+	height: 7.4rem;
 }
 
 .half {
@@ -261,7 +265,7 @@ textarea {
 	}
 
 	/* Contact */
-	#input-submit {
+	#button-submit {
 		width: 95%;
 		float: none;
 		margin: 0.8em auto;

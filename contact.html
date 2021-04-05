@@ -26,9 +26,16 @@
 
 		<form class="contact-form" id="contact-form">
 			<div class="half left">
-				<input type="text" id="input-name" placeholder="First Name" required />
+				<input
+					onkeyup="checkIfInputEmpty()"
+					type="text"
+					id="input-firstName"
+					placeholder="First Name"
+					required
+				/>
 				<input type="text" id="input-Lname" placeholder="Last Name" />
 				<input
+					onkeyup="checkIfInputEmpty()"
 					type="email"
 					id="input-email"
 					placeholder="Email address"
@@ -36,13 +43,14 @@
 				/>
 			</div>
 			<div class="half right">
-				<textarea
+				<input
+					onkeyup="checkIfInputEmpty()"
 					name="Comment"
 					type="text"
 					id="input-Comment"
 					placeholder="Comment"
 					required
-				></textarea>
+				></input>
 			</div>
 			<div class="form-chackbox">
 				<h3>Please Select your Preferred Coding Languages</h3>
@@ -70,9 +78,9 @@
 					<span class="checkmark"></span>
 				</label>
 			</div>
-			<!-- <input type="button" value="Submit" id="input-submit" /> -->
 			<button
-				id="input-submit"
+				disabled="true"
+				id="button-submit"
 				type="submit"
 				form="contact-form"
 				value="Submit"

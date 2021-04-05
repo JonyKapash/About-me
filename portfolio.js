@@ -9,6 +9,7 @@
 // 		profileImage.src = data.avatar_url;
 // 	});
 
+//  Google city coordinates for the mini map in about
 let cities = [
 	"https://maps.google.com/maps?q=kfar%20saba&t=&z=15&ie=UTF8&iwloc=&output=embed",
 	"https://maps.google.com/maps?q=Herzliya&t=&z=13&ie=UTF8&iwloc=&output=embed",
@@ -17,6 +18,7 @@ let cities = [
 	"https://maps.google.com/maps?q=tel%20aviv&t=&z=13&ie=UTF8&iwloc=&output=embed",
 ];
 
+// arr for validation if checkbox has been checked and if so which one
 let checkboxIds = [
 	"JavaScript-checkbox",
 	"ruby-checkbox",
@@ -26,8 +28,6 @@ let checkboxIds = [
 
 let i = 0;
 
-document.getElementById("prev_button").disabled = true; //disable prev button when page loads.
-
 function nextItem() {
 	document.getElementById("prev_button").disabled = false;
 	i++; // increase i by one
@@ -36,11 +36,11 @@ function nextItem() {
 		document.getElementById("next_button").disabled = true;
 	}
 
-	return cities[i]; // give us back the item of where we are now.
+	return cities[i]; // give us back the item of where we are now
 }
 
 function prevItem() {
-	i--; // decrease by one.
+	i--; // decrease by one
 	if (i < cities.length) {
 		document.getElementById("next_button").disabled = false;
 	}
@@ -48,54 +48,71 @@ function prevItem() {
 		document.getElementById("prev_button").disabled = true;
 	}
 
-	return cities[i]; // give us back the item of where we are now.
+	return cities[i]; // give us back the item of where we are now
 }
 
 window.addEventListener("load", function () {
+	//disable prev and submit button when page loads
+	document.getElementById("prev_button").disabled = true;
+
 	document.getElementById("prev_button").addEventListener(
-		"click", // we want to listen for a click.
+		"click", // we want to listen for a click
 		function (e) {
-			// the e here is the event itself.
+			// the e here is the event itself
 			document.getElementById("gmap_canvas").setAttribute("src", prevItem());
 		}
 	);
 
 	document.getElementById("next_button").addEventListener(
-		"click", // we want to listen for a click.
+		"click", // we want to listen for a click
 		function (e) {
-			// the e here is the event itself.
+			// the e here is the event itself
 
 			document.getElementById("gmap_canvas").setAttribute("src", nextItem());
 		}
 	);
 });
 
-// print the form to the console after pressing submit button
-// let nameInput = document.getElementById("input-name");
-// document
-// 	.querySelector("form")
-// 	.addEventListener("submit", function (e) {
-// 		//prevent the normal submission of the form e.preventDefault();
-// 		console.log(nameInput.value);
-// 	});
+let firstName = document.getElementById("input-firstName");
+let email = document.getElementById("input-email");
+let comment = document.getElementById("input-Comment");
 
+// Runs every time a user release a key and check all the required input fields
+function checkIfInputEmpty() {
+	if (
+		firstName.value.trim() !== "" &&
+		email.value.trim() !== "" &&
+		comment.value.trim() !== ""
+	) {
+		document.getElementById("button-submit").disabled = false;
+	} else {
+		document.getElementById("button-submit").disabled = true;
+	}
+}
+
+// print the form to the console when pressing submit button
 function formSubmit() {
 	console.log(
-		`First Name: ${document.getElementById("input-name").value}
-			 
-		 Last Name: ${document.getElementById("input-Lname").value}
-			 
-		 Email: ${document.getElementById("input-email").value}
-			
-		 Comment: ${document.getElementById("input-Comment").value}`
+		`First Name: ${
+			document.getElementById("input-firstName").value
+		}, Last Name: ${document.getElementById("input-Lname").value}, Email: ${
+			document.getElementById("input-email").value
+		}, Comment: ${
+			document.getElementById("input-Comment").value
+		}, Preferred Coding Languages:`
 	);
 
+	// loops over checkboxIds array and check what language is checked and print it to the console
 	for (let n = 0; n < checkboxIds.length; n++) {
 		if (document.getElementById(checkboxIds[n]).checked === true) {
-			console.log(document.getElementById(checkboxIds[n]).value);
+			console.log(`${document.getElementById(checkboxIds[n]).value}, `);
 		}
 	}
 
+	// reset form values back to empty
 	let form = document.getElementById("contact-form");
 	form.reset();
+
+	// disable the form submit button after form submitted
+	document.getElementById("button-submit").disabled = true;
 }
