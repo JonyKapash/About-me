@@ -119,6 +119,18 @@ nav li a:hover {
 h1 {
 	font-size: 3rem;
 }
+
+.links ul {
+	list-style-type: none;
+	display: flex;
+	justify-content: space-evenly;
+	font-size: 3.2rem;
+}
+
+i {
+	color: rgb(22, 21, 21);
+}
+
 /* Contact */
 
 .contact-top-section {
