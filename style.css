@@ -36,8 +36,18 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	margin: 5rem;
+	margin: 6.5rem auto;
 	padding: 50px;
+}
+
+.card-hvr-grow {
+	transform: translateZ(0);
+	transition-duration: 0.3s;
+	transition-property: transform;
+}
+
+.card-hvr-grow:hover {
+	transform: scale(1.05);
 }
 
 .nav-item {
@@ -143,12 +153,27 @@ textarea,
 	background: red;
 	cursor: pointer;
 }
-#button-submit:hover {
-	background: rgb(230, 13, 13);
-}
 
+/* Submit button color when disabled */
 #button-submit:disabled {
 	background-color: rgb(184, 155, 155);
+}
+
+/* button-Grow */
+.hvr-grow {
+	display: inline-block;
+	vertical-align: middle;
+	transform: translateZ(0);
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0);
+	backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+	transition-duration: 0.3s;
+	transition-property: transform;
+}
+
+/* Make the button grow on hover */
+.hvr-grow:hover:enabled {
+	transform: scale(1.05);
 }
 
 #input-Comment {

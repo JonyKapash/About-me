@@ -118,3 +118,16 @@ function formSubmit() {
 	// disable the form submit button after form submitted
 	document.getElementById("button-submit").disabled = true;
 }
+
+function activeAnimation() {
+	document.getElementById("animate").classList.add("animate__hinge");
+
+	setTimeout(function () {
+		document.getElementById("animate").classList.remove("animate__hinge");
+	}, 2500);
+}
+
+// add a click event on about-card element
+document.getElementById("animate").addEventListener("click", function () {
+	activeAnimation();
+});
