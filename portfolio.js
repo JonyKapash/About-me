@@ -1,13 +1,15 @@
-// const GITHUB_URL = "https://api.github.com/users/IsraelTechChallengeITC";
+const GITHUB_URL = "https://api.github.com/users/JonyKapash";
 
-// fetch(GITHUB_URL)
-// 	.then(function (response) {
-// 		return response.json();
-// 	})
-// 	.then(function (data) {
-// 		const profileImage = document.getElementById("profile-image");
-// 		profileImage.src = data.avatar_url;
-// 	});
+fetch(GITHUB_URL)
+	.then(function (response) {
+		return response.json();
+	})
+	.then(function (data) {
+		const profileImage = document.getElementById("profile-image");
+		profileImage.src = data.avatar_url;
+		const profileName = document.getElementById("my-name");
+		profileName.innerText = data.name;
+	});
 
 //  Google city coordinates for the mini map in about
 let cities = [
