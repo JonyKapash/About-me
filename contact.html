@@ -13,88 +13,119 @@
 		<title>ITC Precourse</title>
 	</head>
 	<body>
-		<nav>
-			<ul>
-				<li><a href="./index.html">Home</a></li>
-				<li><a href="./about.html">About</a></li>
-				<li><a href="/">Contact</a></li>
-			</ul>
-		</nav>
-		<section class="contact-top-section">
-			<h1>Contact</h1>
-			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-				veritatis eaque perferendis dolorum a ducimus, cum facilis, nam ea quia
-				eos rem illum, nemo tempore rerum. Non minima maxime inventore.
-			</p>
-		</section>
-
-		<form class="contact-form" id="contact-form">
-			<div class="half left">
-				<input
-					onkeyup="checkIfInputEmpty()"
-					type="text"
-					id="input-firstName"
-					placeholder="First Name"
-					required
-				/>
-				<input type="text" id="input-Lname" placeholder="Last Name" />
-				<input
-					onkeyup="checkIfInputEmpty()"
-					type="email"
-					id="input-email"
-					placeholder="Email address"
-					required
-				/>
+		<div id="page-container">
+			<div id="content-wrap">
+			  <nav>
+				<ul>
+					<li><a href="./index.html">Home</a></li>
+					<li><a href="./about.html">About</a></li>
+					<li><a href="/">Contact</a></li>
+				</ul>
+			</nav>
+			<section class="contact-top-section">
+				<h1>Contact</h1>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
+					veritatis eaque perferendis dolorum a ducimus, cum facilis, nam ea quia
+					eos rem illum, nemo tempore rerum. Non minima maxime inventore.
+				</p>
+			</section>
+	
+			<form class="contact-form" id="contact-form">
+				<div class="half left">
+					<input
+						onkeyup="checkIfInputEmpty()"
+						type="text"
+						id="input-firstName"
+						placeholder="First Name"
+						required
+					/>
+					<input type="text" id="input-Lname" placeholder="Last Name" />
+					<input
+						onkeyup="checkIfInputEmpty()"
+						type="email"
+						id="input-email"
+						placeholder="Email address"
+						required
+					/>
+				</div>
+				<div class="half right">
+					<input
+						onkeyup="checkIfInputEmpty()"
+						name="Comment"
+						type="text"
+						id="input-Comment"
+						placeholder="Comment"
+						required
+					></input>
+				</div>
+				<div class="form-chackbox">
+					<h3>Please Select your Preferred Coding Languages</h3>
+					<label class="checkbox-container"
+						>JavaScript
+						<input id="JavaScript-checkbox" type="checkbox" value="JavaScript" />
+						<span class="checkmark"></span>
+					</label>
+	
+					<label class="checkbox-container"
+						>Ruby
+						<input id="ruby-checkbox" type="checkbox" value="Ruby" />
+						<span class="checkmark"></span>
+					</label>
+	
+					<label class="checkbox-container"
+						>C#
+						<input id="c#-checkbox" type="checkbox" value="C#" />
+						<span class="checkmark"></span>
+					</label>
+	
+					<label class="checkbox-container"
+						>Python
+						<input id="python-checkbox" type="checkbox" value="Python" />
+						<span class="checkmark"></span>
+					</label>
+				</div>
+				<button
+					class="hvr-grow"
+					disabled="true"
+					id="button-submit"
+					type="submit"
+					form="contact-form"
+					value="Submit"
+					onclick="formSubmit()"
+				>
+					Submit
+				</button>
+			</form>
 			</div>
-			<div class="half right">
-				<input
-					onkeyup="checkIfInputEmpty()"
-					name="Comment"
-					type="text"
-					id="input-Comment"
-					placeholder="Comment"
-					required
-				></input>
-			</div>
-			<div class="form-chackbox">
-				<h3>Please Select your Preferred Coding Languages</h3>
-				<label class="container"
-					>JavaScript
-					<input id="JavaScript-checkbox" type="checkbox" value="JavaScript" />
-					<span class="checkmark"></span>
-				</label>
 
-				<label class="container"
-					>Ruby
-					<input id="ruby-checkbox" type="checkbox" value="Ruby" />
-					<span class="checkmark"></span>
-				</label>
-
-				<label class="container"
-					>C#
-					<input id="c#-checkbox" type="checkbox" value="C#" />
-					<span class="checkmark"></span>
-				</label>
-
-				<label class="container"
-					>Python
-					<input id="python-checkbox" type="checkbox" value="Python" />
-					<span class="checkmark"></span>
-				</label>
-			</div>
-			<button
-				class="hvr-grow"
-				disabled="true"
-				id="button-submit"
-				type="submit"
-				form="contact-form"
-				value="Submit"
-				onclick="formSubmit()"
-			>
-				Submit
-			</button>
-		</form>
+			<footer id="footer">
+				<div class="footer-links">
+					<a href="./index.html">
+						<span class="fa-stack fa-lg ig combo">
+							<i class="fa fa-circle fa-stack-2x circle"></i>
+							<i class="fas fa-home fa-stack-1x fa-inverse icon"></i>
+						</span>
+					</a>
+					<a id="footer-about-a" href="/about.html">
+						<span class="fa-stack fa-lg fb combo">
+							<i class="fa fa-circle fa-stack-2x circle"></i>
+							<i class="fas fa-id-card fa-stack-1x fa-inverse icon"></i>
+						</span>
+					</a>
+					<a href="/">
+						<span class="fa-stack fa-lg yt combo">
+							<i class="fa fa-circle fa-stack-2x circle"></i>
+							<i class="fas fa-envelope fa-stack-1x fa-inverse icon"></i>
+						</span>
+					</a>
+				</div>
+			</footer>
+		  </div>
+		  <script
+		  src="https://kit.fontawesome.com/7016a59f36.js"
+		  crossorigin="anonymous"
+	  ></script>
 		<script src="portfolio.js"></script>
 	</body>
 </html>

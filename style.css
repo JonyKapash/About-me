@@ -4,16 +4,25 @@
 	box-sizing: border-box;
 }
 
+#page-container {
+	position: relative;
+	min-height: 100vh;
+}
+
+#content-wrap {
+	padding-bottom: 2.5rem; /* Footer height */
+}
+
 body {
-	background-image: linear-gradient(to bottom right, lightgray, white);
+	background-image: linear-gradient(to bottom right, rgb(209, 209, 209), white);
 	font-family: "Ubuntu", sans-serif;
 	font-size: 16px;
-	height: 100vh;
+	/* height: 100vh; */
 	margin: 0;
 	padding: 0;
 }
 
-.button {
+/* .button {
 	background-color: #3d6ded;
 	border: none;
 	border-radius: 5px;
@@ -24,11 +33,15 @@ body {
 	padding: 10px;
 	text-align: center;
 	width: 120px;
-}
+} */
 
 .card {
 	align-items: center;
-	background-image: linear-gradient(to bottom right, white, lightgray);
+	background-image: linear-gradient(
+		to bottom right,
+		white,
+		rgba(211, 211, 211, 0.816)
+	);
 	border-radius: 10px;
 	-webkit-box-shadow: 4px 4px 40px 0px rgba(0, 0, 0, 1);
 	-moz-box-shadow: 4px 4px 40px 0px rgba(0, 0, 0, 1);
@@ -36,7 +49,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	margin: 6.5rem auto;
+	margin: 7rem auto;
 	padding: 50px;
 }
 
@@ -75,8 +88,6 @@ body {
 	width: 180px;
 }
 
-/* ----------ITC---------- */
-
 /* nav bar  */
 
 nav ul {
@@ -107,7 +118,16 @@ nav li a:hover {
 	background-color: #111;
 }
 
-/* about */
+/* Home */
+
+span {
+	display: flex;
+	font-size: small;
+	font-weight: bold;
+	justify-content: center;
+}
+
+/* About */
 
 .about-middle-section,
 .about-top-section {
@@ -120,15 +140,40 @@ h1 {
 	font-size: 3rem;
 }
 
+h3 {
+	text-align: center;
+	margin-bottom: 1rem;
+}
+
+.links {
+	display: flex;
+}
+
 .links ul {
 	list-style-type: none;
 	display: flex;
 	justify-content: space-evenly;
-	font-size: 3.2rem;
 }
 
-i {
-	color: rgb(22, 21, 21);
+.links i {
+	color: rgb(113, 113, 113);
+	font-size: 2rem;
+	margin-right: 3.5rem;
+}
+
+#fa-linkedin:hover {
+	transition: 0.4s;
+	color: #0077b5;
+}
+
+#fa-github:hover {
+	transition: 0.4s;
+	color: #333;
+}
+
+#fa-stack-overflow:hover {
+	transition: 0.4s;
+	color: #f48024;
 }
 
 /* Contact */
@@ -161,8 +206,8 @@ textarea,
 }
 
 #button-submit {
-	color: white;
-	background: red;
+	color: rgb(255, 255, 255);
+	background: rgb(255, 0, 0);
 	cursor: pointer;
 }
 
@@ -210,7 +255,7 @@ textarea,
 	display: inline-block;
 }
 
-.container {
+.checkbox-container {
 	position: relative;
 	padding-left: 35px;
 	margin-left: 1.6em;
@@ -223,7 +268,7 @@ textarea,
 }
 
 /* Hide the browser's default checkbox */
-.container input {
+.checkbox-container input {
 	position: absolute;
 	opacity: 0;
 	cursor: pointer;
@@ -242,12 +287,12 @@ textarea,
 }
 
 /* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
+.checkbox-container:hover input ~ .checkmark {
 	background-color: rgb(255, 155, 155);
 }
 
-/* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
+/* When the checkbox is checked, add a red background */
+.checkbox-container input:checked ~ .checkmark {
 	background-color: #f32121;
 }
 
@@ -259,12 +304,12 @@ textarea,
 }
 
 /* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
+.checkbox-container input:checked ~ .checkmark:after {
 	display: block;
 }
 
 /* Style the checkmark/indicator */
-.container .checkmark:after {
+.checkbox-container .checkmark:after {
 	left: 9px;
 	top: 5px;
 	width: 5px;
@@ -274,6 +319,72 @@ textarea,
 	-webkit-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
 	transform: rotate(45deg);
+}
+
+/* Footer */
+#footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 2.5rem; /* Footer height */
+}
+#footer-about-a {
+	margin: auto 4rem;
+}
+
+.footer-links {
+	padding: 0.5rem;
+	background: #383838;
+	margin-top: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.footer-links .combo {
+	transform: scale(0.9);
+	transition: 0.4s ease-in;
+	margin: 0 0.5rem;
+	height: 3em;
+	width: 3em;
+	line-height: 3em;
+}
+.combo .circle {
+	color: #f9f9f9;
+	transition: 0.4s ease-in;
+	font-size: 3em;
+}
+.combo .icon {
+	color: #444343;
+	font-size: 2rem;
+	transform: translateY(1px);
+	transition: 0.2s ease-in;
+}
+.combo:hover {
+	transform: scale(1.1);
+}
+.combo:hover,
+.combo:hover .icon {
+	color: white;
+}
+.ig:hover,
+.ig:hover .circle {
+	color: #e91e63;
+}
+.fb:hover,
+.fb:hover .circle {
+	color: #2196f3;
+}
+.yt:hover,
+.yt:hover .circle {
+	color: #f44336;
+}
+.tw:hover,
+.tw:hover .circle {
+	color: #2196f3;
+}
+.gt:hover,
+.gt:hover .circle {
+	color: #1f1f1f;
 }
 
 /* For screen less then 480px */
@@ -308,8 +419,8 @@ textarea,
 		margin: 0.8em auto;
 	}
 
-	/* checkboxes-container */
-	.container {
+	/* checkboxes-checkbox-container */
+	.checkbox-container {
 		position: relative;
 		padding-left: 2rem;
 		margin-left: 0.5em;
