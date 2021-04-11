@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap");
 * {
 	box-sizing: border-box;
 }
@@ -21,19 +21,6 @@ body {
 	margin: 0;
 	padding: 0;
 }
-
-/* .button {
-	background-color: #3d6ded;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	display: inline-block;
-	font-size: 18px;
-	margin: 10px;
-	padding: 10px;
-	text-align: center;
-	width: 120px;
-} */
 
 .card {
 	align-items: center;
@@ -126,25 +113,6 @@ span {
 	font-weight: bold;
 	justify-content: center;
 }
-
-/* About */
-
-.about-middle-section,
-.about-top-section {
-	width: 75%;
-	text-align: center;
-	margin: 6rem auto 0 auto;
-}
-
-h1 {
-	font-size: 3rem;
-}
-
-h3 {
-	text-align: center;
-	margin-bottom: 1rem;
-}
-
 .links {
 	display: flex;
 }
@@ -174,6 +142,64 @@ h3 {
 #fa-stack-overflow:hover {
 	transition: 0.4s;
 	color: #f48024;
+}
+
+/* About */
+
+.about-middle-section,
+.about-top-section {
+	width: 60%;
+	text-align: center;
+	margin: 6rem auto 0 auto;
+}
+
+h1 {
+	font-size: 3.2rem;
+}
+
+h3 {
+	text-align: center;
+	margin-bottom: 1rem;
+	font-size: 1.6rem;
+}
+p {
+	font-family: "Yanone Kaffeesatz", sans-serif;
+	font-size: 1.5rem;
+	line-height: 1.7rem;
+	letter-spacing: 0.2px;
+}
+.mapouter {
+	position: relative;
+	text-align: right;
+	height: 380px;
+	width: 380px;
+	margin: 1rem auto;
+}
+.gmap-canvas {
+	overflow: hidden;
+	background: none !important;
+	height: 380px;
+	width: 380px;
+}
+.gmap-ul {
+	text-align: left;
+	width: 140px;
+	margin: 0 auto;
+}
+
+#prev_button,
+#next_button {
+	color: rgb(233, 233, 233);
+	background: #383838;
+	cursor: pointer;
+	padding: 0.5rem 0.8rem;
+	border-radius: 16px;
+	outline: 0;
+}
+
+#prev_button:disabled,
+#next_button:disabled {
+	background-color: rgb(132, 132, 132);
 }
 
 /* Contact */
@@ -328,6 +354,14 @@ textarea,
 	width: 100%;
 	height: 2.5rem; /* Footer height */
 }
+#footer-sentence {
+	color: rgb(220, 220, 220);
+	font-weight: bold;
+	background-color: #383838;
+	text-align: center;
+	padding-top: 3px;
+	padding-bottom: 0.5rem;
+}
 #footer-about-a {
 	margin: auto 4rem;
 }
@@ -408,7 +442,7 @@ textarea,
 		padding: 1rem;
 		text-align: center;
 	}
-	.gmap_canvas {
+	.gmap-canvas {
 		align-items: center;
 	}
 

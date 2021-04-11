@@ -12,7 +12,7 @@ fetch(GITHUB_URL)
 	});
 
 //  Google city coordinates for the mini map in about
-let cities = [
+const cities = [
 	"https://maps.google.com/maps?q=kfar%20saba&t=&z=15&ie=UTF8&iwloc=&output=embed",
 	"https://maps.google.com/maps?q=Herzliya&t=&z=13&ie=UTF8&iwloc=&output=embed",
 	"https://maps.google.com/maps?q=kfar%20haruv&t=&z=13&ie=UTF8&iwloc=&output=embed",
@@ -20,13 +20,16 @@ let cities = [
 	"https://maps.google.com/maps?q=tel%20aviv&t=&z=13&ie=UTF8&iwloc=&output=embed",
 ];
 
-// arr for validation if checkbox has been checked and if so which one
-let checkboxIds = [
+//For validation if checkbox has been checked and if so which one
+const checkboxIds = [
 	"JavaScript-checkbox",
 	"ruby-checkbox",
 	"c#-checkbox",
 	"python-checkbox",
 ];
+
+// Coding languages for the footer sentence
+const codeLanguages = ["HTML, ", " CSS ", " and JavaScript."];
 
 let i = 0;
 
@@ -54,14 +57,11 @@ function prevItem() {
 }
 
 window.addEventListener("load", function () {
-	//disable prev and submit button when page loads
-	document.getElementById("prev_button").disabled = true;
-
 	document.getElementById("prev_button").addEventListener(
 		"click", // we want to listen for a click
 		function (e) {
 			// the e here is the event itself
-			document.getElementById("gmap_canvas").setAttribute("src", prevItem());
+			document.getElementById("gmap-canvas").setAttribute("src", prevItem());
 		}
 	);
 
@@ -70,7 +70,7 @@ window.addEventListener("load", function () {
 		function (e) {
 			// the e here is the event itself
 
-			document.getElementById("gmap_canvas").setAttribute("src", nextItem());
+			document.getElementById("gmap-canvas").setAttribute("src", nextItem());
 		}
 	);
 });
@@ -127,7 +127,18 @@ function activeAnimation() {
 	}, 2500);
 }
 
+// loop trow codeLanguages arr and set the footer-sentence
+var e = "";
+for (var y = 0; y < codeLanguages.length; y++) {
+	e += codeLanguages[y];
+}
+document.getElementById(
+	"footer-sentence"
+).innerHTML = `This page was built using: ${e}`;
+
 // add a click event on about-card element
+// todo: Check why its stopping the page from loading
+
 document.getElementById("animate").addEventListener("click", function () {
 	activeAnimation();
 });
