@@ -107,11 +107,17 @@ nav li a {
 	text-decoration: none;
 }
 
-nav li a:hover {
+nav li a:hover:not(.active) {
 	background-color: #111;
+}
+.active {
+	background-color: #4f4f4f;
 }
 
 /* Home */
+.home-h3 {
+	text-align: center;
+}
 
 span {
 	display: flex;
