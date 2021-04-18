@@ -1,5 +1,5 @@
 const GITHUB_URL = "https://api.github.com/users/JonyKapash";
-
+// get object with information from github
 fetch(GITHUB_URL)
 	.then(function (response) {
 		return response.json();
@@ -11,7 +11,7 @@ fetch(GITHUB_URL)
 		profileName.innerText = data.name;
 	});
 
-//  Google city coordinates for the mini map in about
+//  Google city coordinates for the mini map in about.html
 const cities = [
 	"https://maps.google.com/maps?q=kfar%20saba&t=&z=15&ie=UTF8&iwloc=&output=embed",
 	"https://maps.google.com/maps?q=Herzliya&t=&z=13&ie=UTF8&iwloc=&output=embed",
@@ -50,6 +50,7 @@ function prevItem() {
 		document.getElementById("next_button").disabled = false;
 	}
 	if (i <= 0) {
+		// disable previous button at the first city.
 		document.getElementById("prev_button").disabled = true;
 	}
 
@@ -137,7 +138,7 @@ document.getElementById(
 ).innerHTML = `This page was built using: ${e}`;
 
 // add a click event on about-card element
-// todo: Check why its stopping the page from loading
+// todo: Check why its stopping the page from loading if not at bottom of page.
 
 document.getElementById("animate").addEventListener("click", function () {
 	activeAnimation();
