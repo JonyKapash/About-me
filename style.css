@@ -117,17 +117,17 @@ span {
 	font-weight: bold;
 	justify-content: center;
 }
-.links {
+.card-Social-links {
 	display: flex;
 }
 
-.links ul {
+.card-Social-links ul {
 	list-style-type: none;
 	display: flex;
 	justify-content: space-evenly;
 }
 
-.links i {
+.card-Social-links i {
 	color: rgb(113, 113, 113);
 	font-size: 2rem;
 	margin-right: 3.5rem;

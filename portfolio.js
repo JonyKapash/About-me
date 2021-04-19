@@ -139,7 +139,6 @@ document.getElementById(
 
 // add a click event on about-card element
 // todo: Check why its stopping the page from loading if not at bottom of page.
-
 document.getElementById("animate").addEventListener("click", function () {
 	activeAnimation();
 });
