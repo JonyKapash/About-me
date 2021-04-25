@@ -136,6 +136,9 @@ function formSubmit() {
 		}
 	}
 
+	// remove the last character from the string
+	submitPrint = submitPrint.slice(0, -1) + ".";
+
 	console.log(submitPrint);
 
 	// reset form values back to empty
