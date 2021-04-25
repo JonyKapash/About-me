@@ -84,7 +84,7 @@ let comment = document.getElementById("input-Comment");
 function checkIfInputEmpty() {
 	if (
 		firstName.value.trim() !== "" &&
-		email.value.trim() !== "" &&
+		validateEmail(email.value) &&
 		comment.value.trim() !== ""
 	) {
 		document.getElementById("button-submit").disabled = false;
@@ -93,25 +93,29 @@ function checkIfInputEmpty() {
 	}
 }
 
+// validate input email
+function validateEmail(emailAddress) {
+	var re = /^\S+@\S+\.\S+$/;
+	return re.test(emailAddress);
+}
+
 // print the form to the console when pressing submit button
 function formSubmit() {
-	console.log(
-		`First Name: ${
-			document.getElementById("input-firstName").value
-		}, Last Name: ${document.getElementById("input-Lname").value}, Email: ${
-			document.getElementById("input-email").value
-		}, Comment: ${
-			document.getElementById("input-Comment").value
-		}, Preferred Coding Languages:`
-	);
+	let submitPrint = `First Name: ${firstName.value}, Last Name: ${
+		document.getElementById("input-Lname").value
+	}, Email: ${email.value}, Comment: ${
+		comment.value
+	}, Preferred Coding Languages:`;
 
 	// loops over checkboxIds array and check what language is checked and print it to the console
 	for (let n = 0; n < checkboxIds.length; n++) {
 		if (document.getElementById(checkboxIds[n]).checked === true) {
-			console.log(`${document.getElementById(checkboxIds[n]).value}, `);
+			submitPrint =
+				submitPrint + ` ${document.getElementById(checkboxIds[n]).value},`;
 		}
 	}
 
+	console.log(submitPrint);
 	// reset form values back to empty
 	let form = document.getElementById("contact-form");
 	form.reset();
