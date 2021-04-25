@@ -12,8 +12,10 @@ fetch(GITHUB_URL)
 	});
 
 //  Google city coordinates for the mini map in about.html
+const kfarSaba =
+	"https://maps.google.com/maps?q=kfar%20saba&t=&z=15&ie=UTF8&iwloc=&output=embed";
 const cities = [
-	"https://maps.google.com/maps?q=kfar%20saba&t=&z=15&ie=UTF8&iwloc=&output=embed",
+	kfarSaba, //todo: fix the rest
 	"https://maps.google.com/maps?q=Herzliya&t=&z=13&ie=UTF8&iwloc=&output=embed",
 	"https://maps.google.com/maps?q=kfar%20haruv&t=&z=13&ie=UTF8&iwloc=&output=embed",
 	"https://maps.google.com/maps?q=ramat%20gan&t=&z=13&ie=UTF8&iwloc=&output=embed",
@@ -29,7 +31,7 @@ const checkboxIds = [
 ];
 
 // Coding languages for the footer sentence
-const codeLanguages = ["HTML, ", " CSS ", " and JavaScript."];
+const codeLanguages = ["HTML", "CSS", "JavaScript"];
 
 let i = 0;
 
@@ -135,7 +137,11 @@ function activeAnimation() {
 // loop trow codeLanguages arr and set the footer-sentence
 var e = "";
 for (var y = 0; y < codeLanguages.length; y++) {
-	e += codeLanguages[y];
+	if (y != codeLanguages.length - 1) {
+		e += `${codeLanguages[y]}, `;
+	} else {
+		e += `and ${codeLanguages[y]}.`;
+	}
 }
 document.getElementById(
 	"footer-sentence"
