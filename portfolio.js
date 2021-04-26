@@ -37,6 +37,7 @@ const checkboxIds = [
 const codeLanguages = ["HTML", "CSS", "JavaScript"];
 
 let firstName = document.getElementById("input-firstName");
+let lastName = document.getElementById("input-Lname");
 let email = document.getElementById("input-email");
 let comment = document.getElementById("input-Comment");
 
@@ -122,11 +123,7 @@ function validateEmail(emailAddress) {
 
 // print the form to the console when pressing submit button
 function formSubmit() {
-	let submitPrint = `First Name: ${firstName.value}, Last Name: ${
-		document.getElementById("input-Lname").value
-	}, Email: ${email.value}, Comment: ${
-		comment.value
-	}, Preferred Coding Languages:`;
+	let submitPrint = `First Name: ${firstName.value}, Last Name: ${lastName.value}, Email: ${email.value}, Comment: ${comment.value}, Preferred Coding Languages:`;
 
 	// loops over checkboxIds array and check what language is checked and print it to the console
 	for (let n = 0; n < checkboxIds.length; n++) {
